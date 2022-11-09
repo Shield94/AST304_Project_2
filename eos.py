@@ -1,5 +1,5 @@
 ########################################################################
-# Team <your team name>: <names>
+# Team 13: Nathan Shields, Brenna Chetan, Maya Joyce
 # AST304, Fall 2020
 # Michigan State University
 ########################################################################
@@ -9,6 +9,7 @@
 """
 
 import astro_const as ac
+from numpy import pi
 
 def pressure(rho, mue):
     """
@@ -23,7 +24,7 @@ def pressure(rho, mue):
     """
     
     # replace following lines with body of routine
-    p = 0.0*rho
+    p = .2*(3/(8*pi))**(2/3)*ac.h**2/ac.m_e*(rho/(mue*ac.m_u))**(5/3)
     return p
 
 def density(p, mue):
@@ -39,5 +40,5 @@ def density(p, mue):
     """
     
     # replace following lines with body of routine
-    rho = 0.0*p
+    rho = mue*ac.m_u*(5*p*ac.m_e/ac.h**2*(3/(8*pi))**-(2/3))**(3/5)
     return rho

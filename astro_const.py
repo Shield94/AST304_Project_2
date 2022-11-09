@@ -1,5 +1,5 @@
 ########################################################################
-# Team <your team name>: <names>
+# Team 13: Nathan Shields, Brenna Chetan, Maya Joyce 
 # AST304, Fall 2020
 # Michigan State University
 ########################################################################
