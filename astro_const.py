@@ -1,5 +1,5 @@
 ########################################################################
-# Team 13: Nathan Shields, Brenna Chetan, Maya Joyce 
+# Team <your team name>: <names>
 # AST304, Fall 2020
 # Michigan State University
 ########################################################################
@@ -34,7 +34,7 @@ pc = _ac.pc.value
 au = _ac.au.value
 year = _au.year.to(_au.second)
 sigmaSB = _ac.sigma_sb.value
-
+ke = (1/5)*(3/(2*fourpi))**(2/3)*(h**2/m_e)*(1/(m_u))**(5/3)
 
 if __name__ == "__main__":
     

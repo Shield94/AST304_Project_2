@@ -17,10 +17,10 @@ def test_eos(pressure_func,density_func,mue=2.0,tolerance=1.0e-12,
         mue
             baryon/electron ratio (default = 2.0)
         tolerance
-            differences between computed and tabulated EOS values that are 
+            differences between computed and tabulated EOS values that are
             larger than tolerance will trigger a warning (default = 1.0e-12)
         testfile
-            table of density (kg/m**3), pressure (Pa), and Fermi energy 
+            table of density (kg/m**3), pressure (Pa), and Fermi energy
             (electron rest mass-energy). Values computed by the eos module are              compared against this (default = 'eos_table.txt')
         units (either 'MKS' or 'CGS')
             specifies either MKS (default) or CGS units
@@ -30,7 +30,7 @@ def test_eos(pressure_func,density_func,mue=2.0,tolerance=1.0e-12,
     """
 
     accept = True
-    
+
     # load data, ignoring column containing Fermi energy/(m_e c**2)
     data = np.loadtxt(testfile,skiprows=3,usecols=[0,1])
     density_val = data[:,0]
@@ -62,7 +62,7 @@ def test_eos(pressure_func,density_func,mue=2.0,tolerance=1.0e-12,
         if max(abs(Perr),abs(rhoerr)) > tolerance:
             print('******** value outside accepted tolerance ********\n')
             accept = False
-            
+
     return accept
 
 

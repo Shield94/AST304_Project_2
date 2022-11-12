@@ -1,15 +1,15 @@
 ########################################################################
-# Team 13: Nathan Shields, Brenna Chetan, Maya Joyce
-# AST304, Fall 2020
+# Group 13: O Star Students: Nathan Shields, Brenna Chetan, Maya Joyce
+# AST 304, Fall 2020
 # Michigan State University
 ########################################################################
 
 """
-<Description of this module goes here: what it does, how it's used.>
+<This module defines functions that compute the equation of state of a white dwarf, giving us Pressure from mue (baryon/electron ratio) and
+rho (mass density), and rho from Pressure and mue.>
 """
 
 import astro_const as ac
-from numpy import pi
 
 def pressure(rho, mue):
     """
@@ -18,13 +18,15 @@ def pressure(rho, mue):
             mass density (kg/m**3)
         mue
             baryon/electron ratio
-    
+
     Returns
         electron degeneracy pressure (Pascal)
     """
-    
+
     # replace following lines with body of routine
-    p = .2*(3/(8*pi))**(2/3)*ac.h**2/ac.m_e*(rho/(mue*ac.m_u))**(5/3)
+    #solve for pressure
+    p = ac.ke*(rho/mue)**(5/3) #ac.ke defined in astro_const is the constant term
+
     return p
 
 def density(p, mue):
@@ -34,11 +36,12 @@ def density(p, mue):
             electron degeneracy pressure (Pascal)
         mue
             baryon/electron ratio
-        
+
     Returns
         mass density (kg/m**3)
     """
-    
+
     # replace following lines with body of routine
-    rho = mue*ac.m_u*(5*p*ac.m_e/ac.h**2*(3/(8*pi))**-(2/3))**(3/5)
+    #solve for rho
+    rho = mue*(p/ac.ke)**(3/5)
     return rho
